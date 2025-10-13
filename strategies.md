@@ -20,11 +20,26 @@ Lotus Finance operates multiple liquidity provision strategies on a Centralized 
 
 **Execution on CLOB:** In the CLOB DEX, PMM operates as an algorithmic market maker, placing and canceling limit orders in response to market conditions. It shifts the liquidity distribution proactively in real-time, ensuring sufficient liquidity depth near the mid-price while minimizing exposure to inactive price ranges.
 
+#### Apex Vault — Advanced Quoting Strategy
+
+**Mechanism**: Apex is Lotus Finance’s flagship algorithmic quoting vault — engineered for high-performance market making. It extends the baseline vault infrastructure by layering a dynamic quant engine that adapts in real time to market conditions. Apex provides ultra high capital efficiency in terms of daily volume turnover rate.
+
+Apex is designed to:
+
+* Maintain **ultra-tight quoted spreads**
+* Operate with **high update frequency**
+* Maximize **capital efficiency**
+* Enforce **robust risk controls**
+
+**Execution on CLOB:** Apex works as an enhanced market making strategy, placing and canceling limit orders with a higher time frequency, more quantitative spread and size calculation, as well as risk control strategies.
+
 ### Strategy Validation
+
 Lotus Finance employs a comprehensive validation process for its liquidity provision strategies, ensuring they are robust, efficient, and aligned with market conditions. User created vaults are subject to criteria to receive incentives.
+
 * **Strategy Parameters:** The strategy must stay "in range" of the current market price. For the fixed grid strategy, this means that the grid upper and lower bounds must encompass the current price. For PMM, the algorithm must maintain liquidity near the mid-price.
 * **Liquidity Concentration:** The strategy must actively participate in trading, and maintain high capital efficiency. For fixed grid strategy this means the upper and lower bounds of the grid must be set to a reasonable range, and for PMM, the algorithm must adjust liquidity dynamically to capture trading opportunities. Vaults created by intentionally deviating from the parameters constrained by our client may still use Lotus Finance, however they may be blacklisted from receiving incentives.
-  
+
 ### LP Risk Analysis
 
 In the DeFi world, any kind of liquidity provision strategy comes with inherent risks. Liquidity providers on Lotus Finance also face a risk profile due to trading activities and holding positions when executing strategies within a CLOB DEX environment. Below are the primary risks and how they are addressed:
